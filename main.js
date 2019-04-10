@@ -239,6 +239,8 @@ function process() {
             });
         }).on("error", (err) => {
             console.log("Error: " + err.message);
+            setState('alive', 'server alive', 'indicator' , 'number', -1);
+            setTimeout(process, 5*1000);
         });
     }
 }
